@@ -1,0 +1,24 @@
+%extend default-montserrat{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+} 
+
+%extend default-roboto{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+} 
+
+%extend title-montserrat{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+$orange: #ffa650;
+$text-title: #1f1f1f;
+$text-default: #9f9f9f;
+$text-white: #fff;
+$red: #ff5441;
+
