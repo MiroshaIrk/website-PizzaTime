@@ -1,17 +1,25 @@
-%extend default-montserrat{
-  font-family: 'Montserrat', sans-serif;
+/**
+lg: 1200px
+md: 992px
+sm: 767px
+xs: 576px
+*/
+
+%default-montserrat {
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 18px;
-} 
+}
 
-%extend default-roboto{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+%default-roboto {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   font-size: 16px;
-} 
+  line-height: 1.375;
+}
 
-%extend title-montserrat{
-  font-family: 'Montserrat', sans-serif;
+%title-montserrat {
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 22px;
 }
@@ -21,4 +29,40 @@ $text-title: #1f1f1f;
 $text-default: #9f9f9f;
 $text-white: #fff;
 $red: #ff5441;
+$yellow: #fcff00;
 
+@mixin flex($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin btn {
+  color: $text-white;
+  @extend %default-montserrat;
+  display: inline-block;
+  padding: 18px 20px;
+  width: 240px;
+  max-width: 100%;
+  border: none;
+  background: $orange;
+  border-radius: 28px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transform: scale(1);
+  transition: all 0.2s ease;
+  &:hover {
+    background: #ec4b38;
+  }
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.96);
+  }
+}

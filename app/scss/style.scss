@@ -1,2 +1,50 @@
 @import "vars";
 @import "normalize";
+@import "global";
+
+.section-top {
+  height: 100vh;
+  min-height: 600px;
+  padding: 100px 0;
+  background-color: $text-title;
+  background-image: url(../images/section-top/bg.jpg);
+  @include bg;
+  color: $text-white;
+  @include flex;
+  text-align: center;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, 0.5);
+  }
+  &__container {
+    position: relative;
+    width: 520px;
+  }
+  &__info {
+    color: $yellow;
+    @extend %title-montserrat;
+
+    @media screen and (max-width: 576px) {
+      font-size: 18px;
+    }
+  }
+  &__title {
+    @extend %title-montserrat;
+    font-size: 55px;
+    margin: 0 0 35px;
+
+    @media screen and (max-width: 576px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 34px;
+    }
+  }
+}
