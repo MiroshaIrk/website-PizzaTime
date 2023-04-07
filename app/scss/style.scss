@@ -2,10 +2,94 @@
 @import "normalize";
 @import "global";
 
+// .header-page
+.header-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: $header-bg;
+  padding: 10px 0;
+  overflow: hidden;
+
+  @media screen and (max-width: 992px) {
+    padding: 5px 0;
+  }
+  &__container {
+    @include flex(space-between);
+  }
+  &__end {
+    @include flex(none);
+  }
+  &__nav {
+    margin-right: 15px;
+  }
+  &__ul {
+    display: flex;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+  &__link {
+    color: $text-white;
+    display: block;
+    padding: 15px 30px;
+    @extend %default-montserrat;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 20px);
+      transform: translateY(-50%);
+      background-color: $text-white;
+      opacity: 0;
+      transition: all 0.2s;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    &:hover .header-page__text {
+      color: $text-title;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 16px;
+      padding: 12px 30px;
+    }
+  }
+  &__text {
+    position: relative;
+    transition: all 0.2s;
+  }
+  &__phone {
+    @media screen and (max-width: 1200px) {
+      font-size: 16px;
+    }
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+  &__hamburger {
+    display: none;
+    margin-right: -15px;
+
+    @media screen and (max-width: 992px) {
+      display: block;
+    }
+  }
+}
+// .header-page end
+
+// .section-top
 .section-top {
   height: 100vh;
   min-height: 600px;
-  padding: 100px 0;
+  padding: 170px 0 100px;
   background-color: $text-title;
   background-image: url(../images/section-top/bg.jpg);
   @include bg;
@@ -13,6 +97,10 @@
   @include flex;
   text-align: center;
   position: relative;
+
+  @media screen and (max-width: 992px) {
+    padding: 150px 0 100px;
+  }
   &:before {
     content: "";
     position: absolute;
@@ -48,3 +136,4 @@
     }
   }
 }
+// .section-top end

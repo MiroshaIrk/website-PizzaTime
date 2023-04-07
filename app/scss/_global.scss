@@ -9,12 +9,23 @@ body {
   color: $text-default;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .container {
   width: 1200px;
   max-width: 100%;
   padding: 0 15px;
+  margin: 0 auto;
 }
 
+/*button start*/
 .btn {
   @include btn;
   background: $red;
@@ -29,3 +40,65 @@ body {
     padding: 16px 20px;
   }
 }
+/*button end*/
+
+/* phone start */
+.phone__item {
+  @extend %default-montserrat;
+  color: $text-white;
+  border: 3px solid $text-white;
+  border-radius: 21.5px;
+  padding: 8px 16px;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $text-title;
+    background: $text-white;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+/* phone end */
+
+/* btn-menu start */
+.btn-menu {
+  background: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px;
+  border: 0;
+  &__box {
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+  }
+  &__inner {
+    display: block;
+    top: 50%;
+    position: relative;
+    &,
+    &::before,
+    &::after {
+      width: 100%;
+      height: 4px;
+      background-color: $text-white;
+      border-radius: 5px;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    &::before {
+      bottom: -10px;
+    }
+    &::after {
+      top: -10px;
+    }
+  }
+}
+/* btn-menu end */

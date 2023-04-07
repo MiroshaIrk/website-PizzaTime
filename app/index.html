@@ -2,35 +2,79 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PizzaTime</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Roboto:wght@300&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PizzaTime</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Roboto:wght@300&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
 
+	<!-- header-page -->
+	<header class="header-page">
+		<div class="container header-page__container">
+			<div class="header-page__start">
+				<div class="logo">
+					<img class="logo__img" src="./images/common/logo.svg" alt="" width="127" height="21">
+				</div>
+			</div>
+			<div class="header-page__end">
+				<nav class="header-page__nav">
+					<ul class="header-page__ul">
+						<li class="header-page__li">
+							<a class="header-page__link" href="#">
+								<span class="header-page__text">пицца</span>
+							</a>
+						</li>
+						<li class="header-page__li">
+							<a class="header-page__link" href="#">
+								<span class="header-page__text">о нас</span>
+							</a>
+						</li>
+						<li class="header-page__li">
+							<a class="header-page__link" href="#">
+								<span class="header-page__text">контакты</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="phone">
+					<a class="phone__item header-page__phone" href="tel:+79999999999">
+						+7 (999) 999-99-99
+					</a>
+				</div>
+				<div class="header-page__hamburger">
+					<button class="btn-menu" type="button">
+						<span class="btn-menu__box">
+							<span class="btn-menu__inner"></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- ./header-page -->
 
-    <!-- section-top -->
-    <section class="section-top">
-        <div class="container section-top__container">
-            <p class="section-top__info">от итальянского повара</p>
-            <h1 class="section-top__title">Лучшая пицца в Москве</h1>
-            <div class="section-top__btn">
-                <button class="btn" type="button">Выбрать</button>
-            </div>
-        </div>
-    </section>
-    <!-- ./section-top -->
+	<!-- section-top -->
+	<section class="section-top">
+		<div class="container section-top__container">
+			<p class="section-top__info">от итальянского повара</p>
+			<h1 class="section-top__title">Лучшая пицца в Москве</h1>
+			<div class="section-top__btn">
+				<button class="btn" type="button">Выбрать</button>
+			</div>
+		</div>
+	</section>
+	<!-- ./section-top -->
 
 
 
-    <script src="js/main.min.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 
 </html>

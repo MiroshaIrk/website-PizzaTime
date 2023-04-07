@@ -30,6 +30,7 @@ $text-default: #9f9f9f;
 $text-white: #fff;
 $red: #ff5441;
 $yellow: #fcff00;
+$header-bg: rgba(#0b1419, 0.8);
 
 @mixin flex($justify: center) {
   display: flex;
