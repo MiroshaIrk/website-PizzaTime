@@ -2,7 +2,7 @@
 @import "normalize";
 @import "global";
 
-// .header-page
+/* header-page start*/
 .header-page {
   position: absolute;
   top: 0;
@@ -64,7 +64,7 @@
   }
   &__text {
     position: relative;
-    transition: all 0.2s;
+    transition: color 0.2s;
   }
   &__phone {
     @media screen and (max-width: 1200px) {
@@ -83,9 +83,9 @@
     }
   }
 }
-// .header-page end
+/* header-page end */
 
-// .section-top
+/* section-top start*/
 .section-top {
   height: 100vh;
   min-height: 600px;
@@ -136,4 +136,78 @@
     }
   }
 }
-// .section-top end
+/* section-top end */
+
+/* section-catalog start */
+.catalog-nav {
+  @include flex;
+
+  @media screen and (max-width: 767px) {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &__wrapper {
+    @include flex;
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+    overflow: hidden;
+
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+  &__btn {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    @extend %default-montserrat;
+    min-width: 150px;
+    color: $text-menu;
+    transition: background 0.2s ease, color 0.2s;
+    border-right: 2px solid $text-menu;
+    transition: background 0.5s ease, color 0.2s, border 0.5s;
+
+    @media screen and (max-width: 767px) {
+      min-width: 0;
+      width: 100%;
+      border-top: 1px solid $text-menu;
+    }
+    &.is-active {
+      background-color: $text-title;
+      color: $text-white;
+      border-color: $text-title;
+    }
+    &:not(.is-active):hover {
+      background-color: $orange;
+      border-right-color: $orange;
+      color: $text-white;
+    }
+  }
+  &__item:last-of-type .catalog-nav__btn {
+    border-right: 0;
+  }
+  &__item:nth-of-type(1) .catalog-nav__btn,
+  &__item:nth-of-type(2) .catalog-nav__btn {
+    @media screen and (max-width: 767px) {
+      border-top: 0;
+    }
+  }
+  &__item:nth-of-type(even) .catalog-nav__btn {
+    @media screen and (max-width: 767px) {
+      border-right: 0;
+    }
+  }
+  &__item {
+    @media screen and (max-width: 767px) {
+      width: 50%;
+      flex-grow: 1;
+    }
+  }
+}
+/* section-catalog end */

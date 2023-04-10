@@ -31,6 +31,7 @@ $text-white: #fff;
 $red: #ff5441;
 $yellow: #fcff00;
 $header-bg: rgba(#0b1419, 0.8);
+$text-menu: #e6e6e6;
 
 @mixin flex($justify: center) {
   display: flex;
@@ -58,7 +59,7 @@ $header-bg: rgba(#0b1419, 0.8);
   cursor: pointer;
   letter-spacing: 0.1em;
   transform: scale(1);
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, scale 0.2s, opacity 0.2s;
   &:hover {
     background: #ec4b38;
   }
