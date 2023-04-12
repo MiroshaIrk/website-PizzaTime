@@ -25,6 +25,7 @@ xs: 576px
 }
 
 $orange: #ffa650;
+$orange-hover: #ff7c21;
 $text-title: #1f1f1f;
 $text-default: #9f9f9f;
 $text-white: #fff;
@@ -32,6 +33,7 @@ $red: #ff5441;
 $yellow: #fcff00;
 $header-bg: rgba(#0b1419, 0.8);
 $text-menu: #e6e6e6;
+$btn-active: #a2a2a2;
 
 @mixin flex($justify: center) {
   display: flex;

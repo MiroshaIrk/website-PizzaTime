@@ -115,6 +115,9 @@ a {
       color: $orange;
     }
   }
+  &-header {
+    margin-bottom: 90px;
+  }
 }
 
 @media (max-width: 576px) {
