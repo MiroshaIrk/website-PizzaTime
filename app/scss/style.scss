@@ -365,3 +365,131 @@
   }
 }
 /* product end */
+
+/* section about start */
+.section-about {
+  background: linear-gradient(to top, #2b2b2b, $text-title);
+  color: $text-white;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  &__img {
+    position: absolute;
+    width: 50%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    object-fit: cover;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  &__container {
+    position: relative;
+    @include flex(flex-end);
+    width: 1400px;
+
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+  &__content {
+    padding-left: 80px;
+    width: 50%;
+
+    @media (max-width: 1200px) {
+      padding-left: 50px;
+    }
+    @media (max-width: 767px) {
+      padding-left: 0;
+      max-width: 100%;
+      width: 500px;
+    }
+  }
+  &__title {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 1.67;
+  }
+}
+/* section about end */
+
+/* section contacts start */
+.section-contacts {
+  &__title {
+    color: $text-title;
+  }
+}
+.contacts {
+  @include flex;
+  &__start {
+    width: 50%;
+  }
+  &__end {
+    width: 50%;
+    padding-left: 30px;
+  }
+  &__map {
+    height: 450px;
+    background-color: $bg-map;
+  }
+  &__item {
+    margin-bottom: 35px;
+  }
+  &__title {
+    @extend %default-montserrat;
+    color: $text-title;
+    margin-bottom: 5px;
+  }
+  &__text {
+    @extend %default-roboto;
+  }
+  &__phone {
+    @extend %default-roboto;
+    transition: color 0.2s ease;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+/* section contacts end */
+
+/* socials start */
+.socials {
+  @include flex(flex-start);
+  gap: 10px;
+  &__item {
+  }
+  &__link {
+    display: inline-block;
+  }
+  &__icon {
+    fill: $orange;
+    width: 35px;
+    height: 35px;
+    transition: fill 0.2s, opacity 0.2s;
+    &:active {
+      opacity: 0.7;
+    }
+    &--vk:hover {
+      fill: #5078a5;
+    }
+    &--fb:hover {
+      fill: #3e58a1;
+    }
+    &--inst:hover {
+      fill: #e6369c;
+    }
+  }
+  &__logo {
+    fill: $text-white;
+  }
+}
+/* socials end */
