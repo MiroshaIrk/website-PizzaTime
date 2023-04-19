@@ -423,25 +423,88 @@
 
 /* section contacts start */
 .section-contacts {
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding-bottom: 0;
+  }
   &__title {
     color: $text-title;
+  }
+  &__container {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(../images/section-contacts/tomatoes.jpg);
+      @include bg;
+      bottom: -100px;
+      right: -350px;
+      height: 397px;
+      width: 672px;
+      z-index: -1;
+
+      @media (max-width: 1800px) {
+        right: -250px;
+      }
+      @media (max-width: 1600px) {
+        right: -150px;
+        bottom: -200px;
+      }
+      @media (max-width: 1400px) {
+        right: -100px;
+      }
+      @media (max-width: 1300px) {
+        right: -50px;
+      }
+      @media (max-width: 1200px) {
+        content: none;
+      }
+    }
   }
 }
 .contacts {
   @include flex;
+  position: relative;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
   &__start {
     width: 50%;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      order: 1;
+    }
   }
   &__end {
     width: 50%;
     padding-left: 30px;
+
+    @media (max-width: 767px) {
+      width: 400px;
+      margin-bottom: 40px;
+      padding-left: 0;
+      max-width: 100%;
+    }
   }
   &__map {
     height: 450px;
     background-color: $bg-map;
+
+    @media (max-width: 992px) {
+      height: 350px;
+    }
+    @media (max-width: 767px) {
+      margin: 0 -20px;
+    }
   }
   &__item {
     margin-bottom: 35px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
   &__title {
     @extend %default-montserrat;
@@ -461,35 +524,14 @@
 }
 /* section contacts end */
 
-/* socials start */
-.socials {
-  @include flex(flex-start);
-  gap: 10px;
-  &__item {
-  }
-  &__link {
-    display: inline-block;
-  }
-  &__icon {
-    fill: $orange;
-    width: 35px;
-    height: 35px;
-    transition: fill 0.2s, opacity 0.2s;
-    &:active {
-      opacity: 0.7;
-    }
-    &--vk:hover {
-      fill: #5078a5;
-    }
-    &--fb:hover {
-      fill: #3e58a1;
-    }
-    &--inst:hover {
-      fill: #e6369c;
-    }
-  }
-  &__logo {
-    fill: $text-white;
+/* section contacts start */
+.footer-page {
+  padding: 25px 0;
+  background-color: $header-bg;
+  &__text {
+    text-align: center;
+    @extend %default-montserrat;
+    color: $text-default;
   }
 }
-/* socials end */
+/* section contacts end */

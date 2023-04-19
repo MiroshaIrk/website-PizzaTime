@@ -129,3 +129,145 @@ a {
   }
 }
 /* section end */
+
+/* socials start */
+.socials {
+  @include flex(flex-start);
+  gap: 10px;
+
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+  &__item {
+  }
+  &__link {
+    display: inline-block;
+  }
+  &__icon {
+    fill: $orange;
+    width: 35px;
+    height: 35px;
+    transition: fill 0.2s, opacity 0.2s;
+
+    @media (max-width: 767px) {
+      width: 45px;
+      height: 45px;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+    &--vk:hover {
+      fill: #5078a5;
+    }
+    &--fb:hover {
+      fill: #3e58a1;
+    }
+    &--inst:hover {
+      fill: #e6369c;
+    }
+  }
+  &__logo {
+    fill: $text-white;
+  }
+}
+/* socials end */
+
+/* popup start */
+.popup {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  &__wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  &__inner {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 50px 0;
+  }
+  &__content {
+    background-color: #fff;
+    padding: 70px 20px;
+    max-width: 730px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    &--fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &--centered {
+      @include flex;
+      flex-direction: column;
+    }
+  }
+  &__btn-close.btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+/* popup end */
+
+/* btn-close start */
+.btn-close {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  background: none;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.2s ease, opacity 0.2s;
+  &::before,
+  &::after {
+    content: "";
+    background-color: $text-default;
+    position: absolute;
+    height: 40px;
+    width: 3px;
+    top: 50%;
+    border-radius: 10px;
+  }
+  &::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  &::before {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+}
+/* btn-close end */
+
+/* mobile-menu start */
+.mobile-menu {
+  width: 100%;
+  &__link {
+    display: block;
+    padding: 20px;
+    @extend %title-montserrat;
+    color: $text-title;
+    text-align: center;
+    font-size: 24px;
+    transition: background 0.2s, color 0.2s;
+    &:hover {
+      background-color: $orange;
+      color: $text-white;
+    }
+  }
+}
+/* mobile-menu end */
