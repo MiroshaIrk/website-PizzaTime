@@ -434,12 +434,12 @@
 	<!-- /.footer-page -->
 
 	<!-- popup-menu -->
-	<div class="popup">
+	<div class="popup popup-menu">
 		<div class="popup__wrapper">
 			<div class="popup__inner">
 				<div class="popup__content popup__content--fluid popup__content--centered">
 					<button class="btn-close popup__btn-close"></button>
-					<nav class="mobile-menu">
+					<nav class="mobile-menu popup__mobile-menu">
 						<ul class="mobile-menu__ul">
 							<li class="mobile-menu__li">
 								<a class="mobile-menu__link" href="#">Пицца</a>
@@ -452,8 +452,8 @@
 							</li>
 						</ul>
 					</nav>
-					<div class="phone">
-						<a class="phone__item" href="tel:+79999999999">
+					<div class="phone popup__phone">
+						<a class="phone__item phone__item--accent" href="tel:+79999999999">
 							+7 (999) 999-99-99
 						</a>
 					</div>
@@ -502,6 +502,71 @@
 		</div>
 	</div>
 	<!-- /.popup-menu -->
+
+	<!-- popup-order -->
+	<div class="popup popup-order">
+		<div class="popup__wrapper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="btn-close popup__btn-close"></button>
+					<h2 class="popup-title popup__title">Заполните форму</h2>
+					<p class="popup__subtitle popup__subtitle--order">Мы привезем вам горячую пиццу за 50 минут</p>
+					<div class="order">
+						<img class="order__img" src="./images/section-catalog/1.png" alt="">
+						<h3 class="order__title">
+							<span>Салями</span>
+							<span>850</span> &#8381;
+						</h3>
+						<div class="order__size">35 см</div>
+						<form class="form" action="">
+							<input type="hidden" name="пицца">
+							<input type="hidden" name="цена">
+							<input type="hidden" name="размер">
+							<input class="form__input" type="text" name="имя" placeholder="Имя" required>
+							<input class="form__input" type="text" name="телефон" placeholder="Телефон" required>
+							<input class="form__input" type="text" name="адресс" placeholder="Адрес" required>
+							<select class="form__input" name="" id="">
+								<option value="Оплата наличными">Оплата наличным</option>
+								<option value="Оплата картой">Оплата картой</option>
+							</select>
+							<button class="btn form__btn" type="submit">Отправить</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.popup-order -->
+
+	<!-- popup-thenks -->
+	<div class="popup popup-thenks">
+		<div class="popup__wrapper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="btn-close popup__btn-close"></button>
+					<h2 class="popup-title popup__title">Успешно отправлено</h2>
+					<p class="popup__subtitle">Мы уже начали готовить вашу пиццу.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.popup-thenks -->
+
+	<!-- popup-error -->
+	<div class="popup popup-error is-active">
+		<div class="popup__wrapper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="btn-close popup__btn-close"></button>
+					<h2 class="popup-title popup__title">Произошла ошибка</h2>
+					<p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру
+						<a class="popup__link" href="tel:+79999998877">+7 (999) 999-88-77</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.popup-error -->
 
 
 	<script src="js/main.min.js"></script>

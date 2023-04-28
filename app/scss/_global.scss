@@ -174,6 +174,9 @@ a {
 
 /* popup start */
 .popup {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -182,6 +185,11 @@ a {
   width: 100%;
   height: 100%;
   overflow: auto;
+  &.is-active {
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+  }
   &__wrapper {
     display: table;
     height: 100%;
@@ -191,6 +199,10 @@ a {
     display: table-cell;
     vertical-align: middle;
     padding: 50px 0;
+
+    @media (max-width: 767px) {
+      padding: 0;
+    }
   }
   &__content {
     background-color: #fff;
@@ -199,6 +211,12 @@ a {
     margin: 0 auto;
     position: relative;
     border-radius: 20px;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
     &--fluid {
       padding-left: 0;
       padding-right: 0;
@@ -208,10 +226,45 @@ a {
       flex-direction: column;
     }
   }
+  &__title {
+    @extend %title-montserrat;
+    text-align: center;
+    font-size: 42px;
+    margin: 0 auto 20px;
+    color: $text-title;
+
+    @media (max-width: 767px) {
+      font-size: 36px;
+    }
+  }
+  &__subtitle {
+    margin: 0;
+    text-align: center;
+    @extend %default-roboto;
+    font-size: 24px;
+    &--order {
+      max-width: 360px;
+      margin: 0 auto 40px;
+
+      @media (max-width: 767px) {
+        max-width: 260px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
+  }
   &__btn-close.btn-close {
     position: absolute;
     top: 20px;
     right: 20px;
+  }
+  &__phone {
+    margin: 40px 0;
+  }
+  &__link {
+    white-space: nowrap;
   }
 }
 /* popup end */
@@ -263,11 +316,74 @@ a {
     color: $text-title;
     text-align: center;
     font-size: 24px;
-    transition: background 0.2s, color 0.2s;
+    opacity: 1;
+    transition: background 0.2s, color 0.2s, opacity 0.2s;
     &:hover {
       background-color: $orange;
+      color: $text-white;
+    }
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+.phone {
+  // margin: 20px 0;
+  &__item--accent {
+    border-color: $orange;
+    color: $orange;
+    &:hover {
+      background: $orange;
       color: $text-white;
     }
   }
 }
 /* mobile-menu end */
+
+/* order start */
+.order {
+  max-width: 310px;
+  margin: 0 auto;
+  &__img {
+    width: 186px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  &__title {
+    @extend %title-montserrat;
+    text-align: center;
+    margin: 0 0 5px;
+    color: $text-title;
+  }
+  &__size {
+    @extend %title-montserrat;
+    text-align: center;
+    margin: 0 0 30px;
+  }
+}
+/* order end */
+
+/* form start */
+.form {
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 20px 28px;
+    background-color: $input-bg;
+    border-radius: 32px;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    &:focus {
+      border-color: $orange;
+    }
+  }
+  &__btn {
+    box-shadow: none;
+    width: 100%;
+    padding: 22px 28px;
+    background-color: $orange;
+    border-radius: 50px;
+  }
+}
+/* form end */
