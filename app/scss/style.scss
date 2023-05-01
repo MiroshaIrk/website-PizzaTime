@@ -4,7 +4,7 @@
 
 /* header-page start*/
 .header-page {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -15,6 +15,10 @@
 
   @media screen and (max-width: 992px) {
     padding: 5px 0;
+  }
+  &.is-active .header-page__link {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   &__container {
     @include flex(space-between);
@@ -38,6 +42,7 @@
     padding: 15px 30px;
     @extend %default-montserrat;
     position: relative;
+    transition: padding 0.3s;
     &::before {
       content: "";
       position: absolute;
