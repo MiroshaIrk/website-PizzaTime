@@ -1,19 +1,4 @@
 ; (function () {
-  var closestAttr = function (item, attr) {
-    var node = item;
-
-    while (node) {
-      var attrValue = node.getAttribute(attr);
-
-      if (attrValue) {
-        return attrValue;
-      }
-
-      node = node.parentElement;
-    }
-
-    return null;
-  };
   var scroll = function (item) {
     var targetTop = item.getBoundingClientRect().top;
     var scrollTop = window.pageYOffset;
@@ -23,7 +8,6 @@
     window.scrollTo(0, targetOffsetTop - headerOffset);
     console.log(headerOffset);
   }
-
 
   myLib.body.addEventListener('click', function (e) {
     var target = e.target;

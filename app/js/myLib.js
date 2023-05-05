@@ -7,11 +7,12 @@
     var node = item;
 
     while (node) {
+
       if (node.classList.contains(className)) {
         return node;
       }
 
-      node = node.parentNode;
+      node = node.parentElement;
     }
 
     return null;
