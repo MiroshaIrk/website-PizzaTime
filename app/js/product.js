@@ -5,12 +5,21 @@
     return;
   }
 
+  var updateProductPrice = function (product, price) {
+    var productPrice = product.querySelector('.product__price-value');
+
+    productPrice.textContent = price;
+    console.log(product)
+  }
+
   var changeProductSize = function (target) {
     var product = myLib.closestItemByClass(target, 'product');
     var previousBtnActive = product.querySelector('.product__size.is-active');
+    var newPrice = target.getAttribute('data-product-size-price');
 
     previousBtnActive.classList.remove('is-active');
     target.classList.add('is-active');
+    updateProductPrice(product, newPrice);
   };
 
   var changeProductOrderInfo = function (target) {
@@ -29,9 +38,6 @@
     order.querySelector('.order-product-price').textContent = productPrice;
     order.querySelector('.order__size').textContent = productSize;
     order.querySelector('.order__img').setAttribute('src', productImgSrc);
-
-
-    console.log(productImgSrc);
   };
 
   catalog.addEventListener('click', function (e) {

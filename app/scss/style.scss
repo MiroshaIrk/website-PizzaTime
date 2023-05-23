@@ -541,3 +541,7 @@
   }
 }
 /* section contacts end */
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}

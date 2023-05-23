@@ -6,7 +6,6 @@
     var headerOffset = document.querySelector('.header-page').clientHeight;
 
     window.scrollTo(0, targetOffsetTop - headerOffset);
-    console.log(headerOffset);
   }
 
   myLib.body.addEventListener('click', function (e) {
