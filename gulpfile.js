@@ -45,7 +45,7 @@ function scripts() {
     ])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
-        .pipe(dest('app/js'))
+        .pipe(dest('app/script'))
         .pipe(browserSync.stream())
 }
 
@@ -65,7 +65,7 @@ function build() {
     return src([
         'app/css/style.min.css',
         'app/fonts/**/*',
-        'app/js/main.min.js',
+        'app/script/main.min.js',
         'app/*.html'
     ],
         { base: 'app' })

@@ -96,7 +96,7 @@
   min-height: 600px;
   padding: 170px 0 100px;
   background-color: $text-title;
-  background-image: url(../images/section-top/bg.jpg);
+  // background-image: url(../images/section-top/bg.jpg);
   @include bg;
   color: $text-white;
   @include flex;
@@ -430,6 +430,7 @@
 /* section contacts start */
 .section-contacts {
   overflow: hidden;
+  position: relative;
 
   @media (max-width: 767px) {
     padding-bottom: 0;
@@ -437,38 +438,35 @@
   &__title {
     color: $text-title;
   }
-  &__container {
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      background-image: url(../images/section-contacts/tomatoes.jpg);
-      @include bg;
-      bottom: -100px;
-      right: -350px;
-      height: 397px;
-      width: 672px;
-      z-index: -1;
+  &__img {
+    position: absolute;
+    // background-image: url(../images/section-contacts/tomatoes.jpg);
+    @include bg;
+    bottom: -100px;
+    right: -50px;
+    height: 397px;
+    width: 672px;
+    z-index: -1;
 
-      @media (max-width: 1800px) {
-        right: -250px;
-      }
-      @media (max-width: 1600px) {
-        right: -150px;
-        bottom: -200px;
-      }
-      @media (max-width: 1400px) {
-        right: -100px;
-      }
-      @media (max-width: 1300px) {
-        right: -50px;
-      }
-      @media (max-width: 1200px) {
-        content: none;
-      }
+    // @media (max-width: 1800px) {
+    //   // right: -250px;
+    // }
+    // @media (max-width: 1600px) {
+    //   // right: -150px;
+    //   // bottom: -200px;
+    // }
+    // @media (max-width: 1400px) {
+    //   // right: -100px;
+    // }
+    // @media (max-width: 1300px) {
+    //   right: -50px;
+    // }
+    @media (max-width: 1200px) {
+      display: none;
     }
   }
 }
+
 .contacts {
   @include flex;
   position: relative;
