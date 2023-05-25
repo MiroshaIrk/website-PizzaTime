@@ -61,7 +61,8 @@
 	<!-- /.header-page -->
 
 	<!-- section-top -->
-	<section class="section-top lazy" data-bg="./images/section-top/bg.jpg">
+	<section class="section-top lazy" data-bg="./images/section-top/bg.webp"
+		data-bg-replace-webp="./images/section-top/bg.jpg">
 		<div class="container section-top__container">
 			<p class="section-top__info">от итальянского повара</p>
 			<h1 class="section-top__title">Лучшая пицца в Москве</h1>
@@ -372,7 +373,10 @@
 
 	<!-- section about -->
 	<section class="section section-about">
-		<img class="section-about__img lazy" data-src="./images/section-about/bg.jpg" alt="">
+		<picture>
+			<source type="image/webp" data-srcset="./images/section-about/bg.webp">
+			<img class="section-about__img lazy" data-src="./images/section-about/bg.jpg" alt="">
+		</picture>
 		<div class="container section-about__container">
 			<div class="section-about__content">
 				<h2 class="section__title section-about__title">О нас</h2>
@@ -386,7 +390,8 @@
 	<!-- section-contacts -->
 	<section class="section section-contacts">
 		<div class="container section-contacts__container lazy">
-			<div class="section-contacts__img lazy" data-bg="./images/section-contacts/tomatoes.jpg"></div>
+			<div class="section-contacts__img lazy" data-bg="./images/section-contacts/tomatoes.webp"
+				data-bg-replace-webp="./images/section-contacts/tomatoes.jpg"></div>
 			<header class="section__header">
 				<h2 class="section__title section-contacts__title">Контакты</h2>
 			</header>
