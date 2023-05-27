@@ -303,6 +303,12 @@
   &__img {
     display: block;
     margin: 0 auto 15px;
+    width: 340px;
+    height: 207px;
+
+    @media (max-width: 1200px) {
+      height: auto;
+    }
   }
   &__title {
     margin: 0 0 15px;
